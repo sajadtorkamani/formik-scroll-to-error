@@ -1,9 +1,9 @@
 export function scrollToFirstError() {
-  // Find the error message node
+  // Try finding the first error message.
   const firstErrorMessage =
     document.querySelector<HTMLElement>('[data-field-error]')
 
-  // Can't find the error message
+  // If we can't find it, log a warning and don't do anything else.
   if (!firstErrorMessage) {
     console.warn('Failed to find error field')
     return
@@ -11,13 +11,14 @@ export function scrollToFirstError() {
 
   const inputId = firstErrorMessage.dataset.fieldError
 
-  // Try finding the label for the field
+  // We found the error message. Let's try to find the corresponding field label
+  // and scroll to it if available.
   const label = document.querySelector(`[for="${inputId}"]`)
   if (label) {
     label.scrollIntoView()
     return
   }
 
-  // If no label could be found, scroll to the field itself
+  // Failed to find the label. Let's scroll to the error message insteage
   firstErrorMessage.scrollIntoView()
 }
