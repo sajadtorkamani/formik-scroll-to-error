@@ -27,7 +27,7 @@ const TextInput: React.FC<Props> = ({ name, label, ...props }) => {
       />
 
       {touched && error && (
-        <div className="mt-0.5 text-sm text-red-600" data-field-error={name}>
+        <div className="mt-0.5 text-sm text-red-600" data-field-error={id}>
           {error}
         </div>
       )}
