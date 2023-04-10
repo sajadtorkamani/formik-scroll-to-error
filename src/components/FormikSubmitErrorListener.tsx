@@ -5,6 +5,7 @@ interface Props {
   onError: (errors: FormikErrors<unknown>) => void
 }
 
+// TODO: Make the logic easier to understand
 const FormikSubmitErrorListener: React.FC<Props> = ({ onError }) => {
   const formikContext = useFormikContext()
   const { isValidating, errors } = formikContext
