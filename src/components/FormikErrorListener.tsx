@@ -16,6 +16,7 @@ const FormikErrorListener: React.FC<Props> = ({ onSubmitError }) => {
   const hasErrors = Object.keys(errors).length > 0
 
   useEffect(() => {
+    // console.log({ submitCount, previousSubmitCount, isNewSubmission })
     setPreviousSubmitCount(submitCount)
   }, [submitCount])
 
