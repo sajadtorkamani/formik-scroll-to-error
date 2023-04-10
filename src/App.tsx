@@ -4,6 +4,7 @@ import { Formik, Form } from 'formik'
 import TextInput from './components/TextInput'
 import TextareaInput from './components/TextareaInput'
 import { toast } from 'react-toastify'
+import FormikEffect from './components/FormikEffect'
 
 interface FormFields {
   firstName: string
@@ -49,6 +50,8 @@ function App() {
         validationSchema={validationSchema}
       >
         <Form>
+          <FormikEffect />
+
           <TextInput label="First name *" name={FORM_FIELDS.firstName} />
           <TextInput label="Last name *" name={FORM_FIELDS.lastName} />
           <TextInput label="Email" name={FORM_FIELDS.email} />
