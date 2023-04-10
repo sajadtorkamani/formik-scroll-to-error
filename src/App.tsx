@@ -60,7 +60,7 @@ function App() {
           <TextareaInput
             label="Bio"
             name={FORM_FIELDS.bio}
-            rows={20}
+            rows={30}
             placeholder="Enter some details about you..."
           />
 
