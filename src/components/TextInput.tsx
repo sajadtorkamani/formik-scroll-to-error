@@ -23,6 +23,7 @@ const TextInput: React.FC<Props> = ({ name, label, ...props }) => {
         {...field}
         {...props}
         id={id}
+        data-field={id}
         className="w-full border px-2 py-1"
       />
 
