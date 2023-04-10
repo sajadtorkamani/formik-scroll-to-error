@@ -11,7 +11,7 @@ export function scrollToFirstError() {
 
   const inputId = firstErrorMessage.dataset.fieldError
 
-  // Try finding the corresponding input field and autofocus it.
+  // Try finding the invalid form field and autofocus it.
   const fieldElement = document.querySelector<
     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
   >(`[data-field="${inputId}"]`)
@@ -25,9 +25,8 @@ export function scrollToFirstError() {
     return
   }
 
-  // We couldn't find the input field. Let's
-  // We found the error message. Let's try to find the corresponding field label
-  // and scroll to it
+  // We couldn't find the form field.Let's try to find the corresponding
+  // field label and scroll to that.
   const label = document.querySelector(`label[for="${inputId}"]`)
   if (label) {
     label.scrollIntoView()
