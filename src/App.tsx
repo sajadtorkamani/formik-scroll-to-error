@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik'
 import TextInput from './components/TextInput'
 import TextareaInput from './components/TextareaInput'
 import { toast } from 'react-toastify'
-import FormikErrorListener from './components/FormikErrorListener'
+import FormikSubmitErrorListener from './components/FormikSubmitErrorListener'
 import { scrollToFirstError } from './scrollToFirstError'
 
 interface FormFields {
@@ -51,7 +51,7 @@ function App() {
         validationSchema={validationSchema}
       >
         <Form>
-          <FormikErrorListener onSubmitError={scrollToFirstError} />
+          <FormikSubmitErrorListener onSubmitError={scrollToFirstError} />
 
           <TextInput label="First name *" name={FORM_FIELDS.firstName} />
           <TextInput label="Last name *" name={FORM_FIELDS.lastName} />

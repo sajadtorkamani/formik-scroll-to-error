@@ -5,7 +5,7 @@ interface Props {
   onSubmitError: (errors: FormikErrors<unknown>) => void
 }
 
-const FormikErrorListener: React.FC<Props> = ({ onSubmitError }) => {
+const FormikSubmitErrorListener: React.FC<Props> = ({ onSubmitError }) => {
   const formikContext = useFormikContext()
   const { isValidating, errors } = formikContext
   const [previousSubmitCount, setPreviousSubmitCount] = useState(
@@ -30,4 +30,4 @@ const FormikErrorListener: React.FC<Props> = ({ onSubmitError }) => {
   return null
 }
 
-export default FormikErrorListener
+export default FormikSubmitErrorListener
