@@ -3,6 +3,7 @@ import * as Yup from 'yup'
 import { Formik, Form } from 'formik'
 import TextInput from './components/TextInput'
 import TextareaInput from './components/TextareaInput'
+import { toast } from 'react-toastify'
 
 interface FormFields {
   firstName: string
@@ -30,7 +31,7 @@ function App() {
   }
 
   function handleSubmit() {
-    console.log('Yo')
+    toast.success('Valid!')
   }
 
   const validationSchema = Yup.object({
