@@ -51,7 +51,7 @@ function App() {
         validationSchema={validationSchema}
       >
         <Form>
-          <FormikSubmitErrorListener onSubmitError={scrollToFirstError} />
+          <FormikSubmitErrorListener onError={scrollToFirstError} />
 
           <TextInput label="First name *" name={FORM_FIELDS.firstName} />
           <TextInput label="Last name *" name={FORM_FIELDS.lastName} />

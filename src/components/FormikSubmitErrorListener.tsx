@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { FormikErrors, useFormikContext } from 'formik'
 
 interface Props {
-  onSubmitError: (errors: FormikErrors<unknown>) => void
+  onError: (errors: FormikErrors<unknown>) => void
 }
 
-const FormikSubmitErrorListener: React.FC<Props> = ({ onSubmitError }) => {
+const FormikSubmitErrorListener: React.FC<Props> = ({ onError }) => {
   const formikContext = useFormikContext()
   const { isValidating, errors } = formikContext
   const [previousSubmitCount, setPreviousSubmitCount] = useState(
@@ -22,7 +22,7 @@ const FormikSubmitErrorListener: React.FC<Props> = ({ onSubmitError }) => {
 
   useEffect(() => {
     if (isNewSubmission && !isValidating && hasErrors) {
-      onSubmitError(errors)
+      onError(errors)
       return
     }
   }, [previousSubmitCount, isValidating])
